@@ -40,7 +40,7 @@ module.exports = {
   networks: {
     geth: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: rpc_port_alice,            // Standard Ethereum port (default: none)
+      port: rpc_port_alice,  // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
     },
     // Useful for testing. The `development` name is special - truffle uses it by default
