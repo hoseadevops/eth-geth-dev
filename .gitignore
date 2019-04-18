@@ -1,0 +1,8 @@
+*.log
+history
+geth
+node_modules
+package-lock.json
+solidity/compile/*.bin
+solidity/compile/*.abi
+truffle/build
