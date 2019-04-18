@@ -8,7 +8,7 @@ project_path=$(
 )
 source $project_path/bash.sh
 
-network_id=$(read_kv_config .env NETWORK_ID)
+network_id=$(read_kv_config env.config.js NETWORK_ID)
 IDENTITIES=(alice bob lily)
 
 CMD=$1
@@ -26,8 +26,8 @@ start)
         echo "必须指定身份，可用身份: ${IDENTITIES[*]}"
         exit -1
     fi
-    PORT=$(read_kv_config .env base_port_$IDENTITY)
-    RPC_PORT=$(read_kv_config .env rpc_port_$IDENTITY)
+    PORT=$(read_kv_config env.config.js base_port_$IDENTITY)
+    RPC_PORT=$(read_kv_config env.config.js rpc_port_$IDENTITY)
     run_cmd "geth --datadir=./geth/$IDENTITY --port=$PORT --rpc --rpcport=$RPC_PORT --networkid=$network_id --preload=config/identities.js --nodiscover --verbosity=5 --mine --minerthreads=1 console 2>>./geth/$IDENTITY/geth.log"
     ;;
 

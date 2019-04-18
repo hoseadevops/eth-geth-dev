@@ -1,10 +1,13 @@
+require('../env.config.js');
 require('../config/identities.js');
+
 const Web3 = require('web3');
 const BigNumber = require('bignumber.js');
-const alice_rpc = "http://127.0.0.1:8101";
-const web3 = new Web3(alice_rpc);
+const alice_rpc = "http://127.0.0.1:" + rpc_port_alice;
 
-const contractAddress = require('../truffle/build/contracts/ERC20Token.json').networks[8888].address;
+
+const web3 = new Web3(alice_rpc);
+const contractAddress = require('../truffle/build/contracts/ERC20Token.json').networks[NETWORK_ID].address;
 const contractABI = require('../truffle/build/contracts/ERC20Token.json').abi;
 const contract = new web3.eth.Contract(contractABI, contractAddress, { defaultAccount: alice });
 
@@ -34,6 +37,7 @@ eth.run = async function run () {
 		console.log("bob: ", new BigNumber(balance));
 	});
 }
+
 
 
 eth.run();
