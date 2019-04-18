@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "personal Ethereum private net.",
   "homepage": "https://github.com/hoseadevops/eth-geth-dev",
+  "scripts": {
+    "test": "node ./interacting"
+  },
   "dependencies": {
     "openzeppelin-solidity": "2.2.0",
     "solc": "^0.5.7",

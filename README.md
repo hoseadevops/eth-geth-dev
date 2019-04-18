@@ -29,5 +29,5 @@ npm install
 
 ../node_modules/.bin/truffle migrate --network geth
 
-node interacting/ERC20.js
+npm run test
 ```

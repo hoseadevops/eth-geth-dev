@@ -14,30 +14,17 @@ const contract = new web3.eth.Contract(contractABI, contractAddress, { defaultAc
 
 var eth = {};
 
-eth.balanceOf = async function balanceOf (fromAddress, address) {
-	return await contract.methods.balanceOf(address).call({ from: fromAddress });
-}
-
-eth.transfer = async function transfer (fromAddress, toAddress, value) {
-	return await contract.methods.transfer(toAddress, value).send({ from: fromAddress })
-		.on('transactionHash', (hash) => {
-			console.log("transactionHash :", hash);
-		})
-		.on('confirmation', (confirmationNumber, receipt) => {
-			console.log("confirmation :", confirmationNumber, receipt);
-		})
-		.on('error', console.error);
-}
-
 eth.run = async function run () {
+	contract.methods.transfer(bob, 100).send({ from: alice }, function (error, transactionHash) {
+		console.log("transfer to bob 100 => transactionHash: ", transactionHash);
 
-	eth.transfer(alice, bob, 1000);
-
-	await eth.balanceOf(alice, bob).then(balance => {
-		console.log("bob: ", new BigNumber(balance));
+		contract.methods.balanceOf(bob).call({ from: alice }).then(balance => {
+			console.log("get balance from bob => balance: ", new BigNumber(balance));
+		});
 	});
 }
 
 
-
-eth.run();
+module.exports = {
+	eth
+}
