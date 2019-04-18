@@ -1,4 +1,6 @@
-/**
+
+require('../env.config.js');
+/** 
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
  * compilation and testing. Uncomment the ones you need or modify
@@ -38,7 +40,7 @@ module.exports = {
   networks: {
     geth: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: require('../.env.json').rpc_port_alice,            // Standard Ethereum port (default: none)
+      port: rpc_port_alice,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
     },
     // Useful for testing. The `development` name is special - truffle uses it by default
