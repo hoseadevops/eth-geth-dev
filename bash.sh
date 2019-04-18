@@ -22,7 +22,7 @@ function run_cmd() {
 function read_kv_config() {
     local file=$1
     local key=$2
-    cat $file | grep "$key=" | awk -F '=' '{print $2}'
+    cat $file | grep "$key = " | awk -F '=' '{print $2}' | sed s/[[:space:]]//g
 }
 
 #--------------------------------------------

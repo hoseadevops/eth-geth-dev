@@ -9,6 +9,7 @@ project_path=$(
 source $project_path/bash.sh
 
 network_id=$(read_kv_config env.config.js NETWORK_ID)
+
 IDENTITIES=(alice bob lily)
 
 CMD=$1
