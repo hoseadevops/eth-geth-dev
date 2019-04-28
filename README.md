@@ -28,6 +28,8 @@ personal.unlockAccount(eth.coinbase, "foobar123", 3000000)
 ../node_modules/.bin/truffle compile
 
 ../node_modules/.bin/truffle migrate --network geth
+// or
+ ../node_modules/.bin/truffle migrate --network geth --reset
 
 npm run test
 

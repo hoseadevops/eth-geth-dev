@@ -16,7 +16,7 @@ var eth = {};
 
 eth.run = async function run () {
 	contract.methods.transfer(bob, 100).send({ from: alice }, function (error, transactionHash) {
-		console.log("transfer to bob 100 => transactionHash: ", transactionHash);
+		console.log("transfer to bob 100 => transactionHash: ", transactionHash, error);
 
 		contract.methods.balanceOf(bob).call({ from: alice }).then(balance => {
 			console.log("get balance from bob => balance: ", new BigNumber(balance));
