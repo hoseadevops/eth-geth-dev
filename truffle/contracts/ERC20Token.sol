@@ -5,7 +5,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
 
 contract ERC20Token is ERC20, ERC20Detailed {
     
-    uint private INITIAL_SUPPLY = 10000e18;
+    uint private INITIAL_SUPPLY = 1000000000000000000000000000000000000000000000000000000000e18;
     
     constructor () public
     ERC20Detailed("ERC20Token", "ERC20", 18)
