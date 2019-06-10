@@ -29,7 +29,7 @@ start)
     fi
     PORT=$(read_kv_config env.config.js base_port_$IDENTITY)
     RPC_PORT=$(read_kv_config env.config.js rpc_port_$IDENTITY)
-    run_cmd "geth --datadir=./geth/$IDENTITY --port=$PORT --rpc --rpcport=$RPC_PORT --networkid=$network_id --preload=config/identities.js --nodiscover --verbosity=5 --mine --minerthreads=1 console 2>>./geth/$IDENTITY/geth.log"
+    run_cmd "geth --datadir=./geth/$IDENTITY --port=$PORT --rpc --rpcaddr=0.0.0.0 --rpcport=$RPC_PORT --networkid=$network_id --preload=config/identities.js --nodiscover --verbosity=5 --mine --minerthreads=1 console 2>>./geth/$IDENTITY/geth.log"
     ;;
 
 connect)

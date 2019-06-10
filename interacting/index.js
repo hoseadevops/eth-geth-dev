@@ -1,3 +1,7 @@
 const { eth } = require("./ERC20.js");
 
-eth.run();
+const { Storage } = require("./Storage.js");
+
+// eth.run();
+
+Storage.run();
