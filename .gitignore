@@ -1,6 +1,10 @@
 *.log
 history
-geth
+geth/alice/geth
+geth/bob/geth
+geth/lily/geth
+geth.ipc
+geth.log
 node_modules
 package-lock.json
 solidity/compile/*.bin
