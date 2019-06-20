@@ -30,6 +30,13 @@ sh geth.sh connect bob alice
 personal.unlockAccount(eth.coinbase, "foobar123", 3000000)
 
 # 合约
+
+
+
+# 根据需要 修改truffle 配置 solc 编译版本 可以使用 docker 镜像
+# 比如：0.4.25
+# docker pull ethereum/solc:0.4.25
+
 ../node_modules/.bin/truffle compile
 ../node_modules/.bin/truffle migrate --network geth
 # or

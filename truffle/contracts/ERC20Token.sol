@@ -1,15 +1,27 @@
-pragma solidity ^0.5.0;
+// pragma solidity ^0.5.0;
 
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
+// import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+// import "openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
 
-contract ERC20Token is ERC20, ERC20Detailed {
+// contract ERC20Token is ERC20, ERC20Detailed {
     
-    uint private INITIAL_SUPPLY = 1000000000000000000000000000000000000000000000000000000000e18;
+//     uint private INITIAL_SUPPLY = 1000000000000000000000000000000000000000000000000000000000e18;
     
-    constructor () public
-    ERC20Detailed("ERC20Token", "ERC20", 18)
-    {
-        _mint(msg.sender, INITIAL_SUPPLY);
+//     constructor () public
+//     ERC20Detailed("ERC20Token", "ERC20", 18)
+//     {
+//         _mint(msg.sender, INITIAL_SUPPLY);
+//     }
+// }
+
+pragma solidity ^0.4.17;
+
+
+contract EEEE {
+    
+    string public name;
+
+    function EEEE(string _name){
+        name = _name;
     }
 }
