@@ -4,8 +4,9 @@
 //   deployer.deploy(ERC20Token);
 // };
 
+// const ArmorsToken = artifacts.require("ArmorsToken");
 const TetherToken = artifacts.require("TetherToken");
 
 module.exports = function(deployer) {
-  deployer.deploy(TetherToken, 1000000000000000, 'Tether USD', 'USDT', 6);
+  deployer.deploy(TetherToken, 1550057493363429, "Tether USD","USDT", 6);
 };

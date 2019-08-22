@@ -7,17 +7,17 @@ const alice_rpc = "http://127.0.0.1:" + rpc_port_alice;
 
 
 const web3 = new Web3(alice_rpc);
-const contractAddress = require('../truffle/build/contracts/TetherToken.json').networks[NETWORK_ID].address;
-const contractABI = require('../truffle/build/contracts/TetherToken.json').abi;
+const contractAddress = require('../truffle/build/contracts/ArmorsToken.json').networks[NETWORK_ID].address;
+const contractABI = require('../truffle/build/contracts/ArmorsToken.json').abi;
 const contract = new web3.eth.Contract(contractABI, contractAddress, { defaultAccount: alice });
 
 
-var usdt = {};
+var arm = {};
 
-usdt.run = async function run () {
+arm.run = async function run () {
 	// let transferBalance = new BigNumber("100000000000000000000000000000000000000000000000000000000000000000000000000000");
 
-	let transferBalance = new BigNumber("10");
+	let transferBalance = new BigNumber("100");
 	let user1 = "0x72960bfD5ed5CD3fcDe9F0d807f351c6d1586a20";
 
 	contract.methods.transfer(user1, transferBalance.toFixed()).send({ from: alice }, function (error, transactionHash) {
@@ -35,5 +35,5 @@ usdt.run = async function run () {
 
 
 module.exports = {
-	usdt
+	arm
 }
