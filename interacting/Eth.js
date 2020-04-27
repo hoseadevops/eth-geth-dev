@@ -15,8 +15,8 @@ const contract = new web3.eth.Contract(contractABI, contractAddress, { defaultAc
 var eth = {};
 
 eth.run = async function run () {
-	let transferBalance = new BigNumber("100");
-	let user1 = "0x72960bfD5ed5CD3fcDe9F0d807f351c6d1586a20";
+	let transferBalance = new BigNumber("100000000000000000000");
+	let user1 = "0xD766c3B6B14EcDe74939e348d1400B1F745bF761";
 	web3.eth.sendTransaction({
 	    from: alice,
 	    to: user1,

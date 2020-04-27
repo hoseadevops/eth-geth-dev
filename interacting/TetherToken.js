@@ -17,8 +17,8 @@ var usdt = {};
 usdt.run = async function run () {
 	// let transferBalance = new BigNumber("100000000000000000000000000000000000000000000000000000000000000000000000000000");
 
-	let transferBalance = new BigNumber("10");
-	let user1 = "0x72960bfD5ed5CD3fcDe9F0d807f351c6d1586a20";
+	let transferBalance = new BigNumber("100000");
+	let user1 = "0xD766c3B6B14EcDe74939e348d1400B1F745bF761";
 
 	contract.methods.transfer(user1, transferBalance.toFixed()).send({ from: alice }, function (error, transactionHash) {
 		console.log("transfer to user1 100 => transactionHash: ", user1, transactionHash, error);
